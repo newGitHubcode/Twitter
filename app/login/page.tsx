@@ -23,7 +23,7 @@ export default async function Login() {
 
     // authbutton
     return (
-        <div className="flex-1 flex justtify-center items-center">
+        <div className="flex-1 flex justify-center items-center">
             <GitHubButton /> 
         </div>
         
