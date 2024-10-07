@@ -10,7 +10,7 @@ export const dynamic = 'force-dynamic'
 
 // main function
 export default async function Login() {
-    // create servercomponentclient using cookies
+    try {// create servercomponentclient using cookies
     const supabase = createServerComponentClient<Database>({ cookies })
 
     // get session from data
@@ -19,6 +19,9 @@ export default async function Login() {
     // if there is session we redirect
     if (session) {
         redirect("/")
+    } 
+    } catch (err) {
+        console.log(err)
     }
 
     // authbutton

@@ -5,7 +5,7 @@ import { useRouter } from "next/navigation"
 
 
 export default function AuthButtonClient({ session } : { session: Session | null}) {
-	const supabase = createClientComponentClient()
+	try {const supabase = createClientComponentClient()
 	const router = useRouter()
 
 
@@ -21,6 +21,8 @@ export default function AuthButtonClient({ session } : { session: Session | null
 	const handleSignOut = async () => {
 		await supabase.auth.signOut()
 		router.refresh()
+	}} catch(err) {
+		console.log(err)
 	}
 
 
